@@ -27,7 +27,7 @@
     <div class="card">
         <a href="#">
             <div class="column">
-                <img src="{{ asset('public/images/รูปindex/วิจัย.svg') }} " alt="Image 1">
+                <img src="{{ asset('images/รูปindex/วิจัย.svg') }} " alt="Image 1">
                 <h3>E-Project</h3>
                 <p>ระบบฐานข้อมูลโครงงาน</p>
             </div>
