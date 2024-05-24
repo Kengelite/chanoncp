@@ -3,24 +3,24 @@
 
     <ul class="sidebar-nav" id="sidebar-nav">
 
-      <li class="nav-item">
-        <a class="nav-link " href="index.html">
+      <li class="nav-item" >
+        <a class="nav-link " href="{{ route('indeax_scholar')}}" id="index">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
       </li><!-- End Dashboard Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link collapsed" data-bs-target="#-nav" data-bs-toggle="collapse" id="journalall" >
           <i class="bi bi-journal-text"></i><span>Journal All</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="-elements.html">
+            <a href="{{ route('journalalltojournal') }}" id="journal">
               <i class="bi bi-circle"></i><span>Journal</span>
             </a>
           </li>
           <li>
-            <a href="-layouts.html">
+            <a href="{{ route('journalalltoconference') }}" id="conference"> 
               <i class="bi bi-circle"></i><span>Conference</span>
             </a>
           </li>
@@ -28,18 +28,18 @@
       </li>
 
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+      <li class="nav-item" >
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" id="person"  >
           <i class="bi bi-person-vcard"></i><span>รายละเอียด</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="forms-elements.html">
-              <i class="bi bi-circle"></i><span>บุคคลากร</span>
+            <a href="{{ route('persontopersonnel') }}" id="personnel">
+                <i class="bi bi-circle"></i><span>บุคคลากร</span>
             </a>
           </li>
           <li>
-            <a href="forms-layouts.html">
+            <a href="{{ route('persontostudent') }}" id="student">
               <i class="bi bi-circle"></i><span>นักศึกษา</span>
             </a>
           </li>
@@ -47,18 +47,28 @@
       </li><!-- End Forms Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
+        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" id="compare">
+          <i class="bi bi-layout-text-window-reverse"></i><span>ตารางเปรียบเทียบ</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <li>
+            <a href="{{route('comparetouniversity')}}"  id="university">
+              <i class="bi bi-circle"></i><span>มหาลัย</span>
+            </a>
+          </li>
           <li>
             <a href="tables-general.html">
-              <i class="bi bi-circle"></i><span>General Tables</span>
+              <i class="bi bi-circle"></i><span>คณะ</span>
             </a>
           </li>
           <li>
             <a href="tables-data.html">
-              <i class="bi bi-circle"></i><span>Data Tables</span>
+              <i class="bi bi-circle"></i><span>อาจารย์</span>
+            </a>
+          </li>
+          <li>
+            <a href="tables-data.html">
+              <i class="bi bi-circle"></i><span>นักศึกษา</span>
             </a>
           </li>
         </ul>
@@ -87,30 +97,8 @@
         </ul>
       </li><!-- End Charts Nav -->
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-gem"></i><span>Icons</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="icons-bootstrap.html">
-              <i class="bi bi-circle"></i><span>Bootstrap Icons</span>
-            </a>
-          </li>
-          <li>
-            <a href="icons-remix.html">
-              <i class="bi bi-circle"></i><span>Remix Icons</span>
-            </a>
-          </li>
-          <li>
-            <a href="icons-boxicons.html">
-              <i class="bi bi-circle"></i><span>Boxicons</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Icons Nav -->
 
-      <li class="nav-heading">Pages</li>
+      <li class="nav-heading mt-5">Pages</li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="users-profile.html">
@@ -164,3 +152,55 @@
     </ul>
 
   </aside><!-- End Sidebar-->
+
+  <script>
+   
+   document.addEventListener('DOMContentLoaded', function() {
+    const pathSegments = window.location.pathname.split('/'); // Split the path by "/"
+    
+    // Check the third segment of the path (index starts from 0)
+    if (pathSegments[1] === 'person') {
+        var element_p3 = document.getElementById('index');
+        element_p3.classList.add('remove');
+        var element_p1 = document.getElementById('person');
+        element_p1.classList.add('active');
+        console.log('asdaddsa')
+        if (pathSegments[2] === 'personnel') {
+            var element_p2 = document.getElementById('personnel');
+            element_p2.classList.add('active');
+        }else if (pathSegments[2] === 'student') {
+            var element_p2 = document.getElementById('student');
+            element_p2.classList.add('active');
+        }
+    }
+    if (pathSegments[1] === 'journalall') {
+        var element_p3 = document.getElementById('index');
+        element_p3.classList.add('remove');
+        var element_p1 = document.getElementById('journalall');
+        element_p1.classList.add('active');
+        console.log('asdaddsa')
+        if (pathSegments[2] === 'journal') {
+            var element_p2 = document.getElementById('journal');
+            element_p2.classList.add('active');
+        }else if (pathSegments[2] === 'conference') {
+            var element_p2 = document.getElementById('conference');
+            element_p2.classList.add('active');
+        }
+    }
+    if (pathSegments[1] === 'compare') {
+        var element_p3 = document.getElementById('index');
+        element_p3.classList.add('remove');
+        var element_p1 = document.getElementById('compare');
+        element_p1.classList.add('active');
+        console.log('asdaddsa')
+        if (pathSegments[2] === 'university') {
+            var element_p2 = document.getElementById('university');
+            element_p2.classList.add('active');
+        }else if (pathSegments[2] === 'conference') {
+            var element_p2 = document.getElementById('conference');
+            element_p2.classList.add('active');
+        }
+    }
+    
+});
+  </script>

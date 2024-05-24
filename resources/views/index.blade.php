@@ -25,7 +25,7 @@
         </a>
     </header>
     <div class="card">
-        <a href="#">
+        <a href="{{ route('errorpage') }}">
             <div class="column">
                 <img src="{{ asset('images/รูปindex/วิจัย.svg') }} " alt="Image 1">
                 <h3>E-Project</h3>
@@ -33,21 +33,21 @@
             </div>
         </a>
 
-        <a href="{{ asset('/scholar') }}">
+        <a href="{{ url('/scholar') }}">
             <div class="column">
                 <img src="{{ asset('images/รูปindex/วิจัย.svg') }} " alt="Image 3">
                 <h3>ScholarSphere</h3>
                 <p>ระบบฐานข้อมูลวิจัย</p>
             </div>
         </a>
-        <a href="/scholar">
+        <a href="{{ route('errorpage') }}">
             <div class="column">
                 <img src="{{ asset('images/รูปindex/วิจัย.svg') }} " alt="Image 3">
                 <h3>ScholarSphere</h3>
                 <p>ระบบฐานข้อมูลวิจัย</p>
             </div>
         </a>
-        <a href="{{ url('scholar') }}">
+        <a href="{{ route('errorpage') }}">
             <div class="column">
                 <img src="{{ asset('images/รูปindex/วิจัย.svg') }} " alt="Image 3">
                 <h3>ScholarSphere</h3>

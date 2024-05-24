@@ -707,9 +707,16 @@ h6 {
   color: #899bbd;
 }
 
+.sidebar-nav .nav-item a.active,
 .sidebar-nav .nav-link:hover {
   color: #4154f1;
   background: #f6f9ff;
+}
+
+.sidebar-nav .nav-item .remove ,
+.sidebar-nav .nav-item .remove i{
+  color: #444444;
+  background: white;
 }
 
 .sidebar-nav .nav-link:hover i {
@@ -750,10 +757,14 @@ h6 {
 }
 
 .sidebar-nav .nav-content a:hover,
+.sidebar-nav .nav-item a.active,
 .sidebar-nav .nav-content a.active {
   color: #4154f1;
 }
-
+.sidebar-nav .nav-item a:hover{
+  color: #4154f1;
+  background-color: #f6f9ff;
+}
 .sidebar-nav .nav-content a.active i {
   background-color: #4154f1;
 }
